@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mainConfigsFile">mainConfig</string>
+    <string name="configsDirPostfix">.ehp</string>
+
+    <string name="configsFile">config</string>
+    <string name="subsystemsName">subsystems</string>
+
+    <string name="1 controlType">resbt</string>
+    <string name="2 controlType">floor</string>
+    <string name="3 controlType">room</string>
+    <string name="4 controlType">subroom</string>
+
+    <string name="default nextLvlImg">:/drawable/nextLevel.png</string>
+    <string name="default noImg">:/drawable/noImg.png</string>
+    <string name="controlPosX">posX</string>
+    <string name="controlPosY">posY</string>
+    <string name="controlName">name</string>
+    <string name="windiwWidth">width</string>
+    <string name="windiwHeight">height</string>
+    <string name="configValue">value</string>
+    <string name="controlImgOff">imageOff</string>
+    <string name="controlLvlImg">cont_image</string>
+</resources>

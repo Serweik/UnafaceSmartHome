@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/values">
+        <file alias="strings.xml">resources/values/strings.xml</file>
+    </qresource>
+    <qresource prefix="/drawable">
+        <file alias="nextLevel.png">resources/drawable/nextLevel.png</file>
+	<file alias="noImg.png">resources/drawable/noImg.png</file>
+    </qresource>
+</RCC>
