@@ -8,8 +8,6 @@ FileWorker::FileWorker(QObject* parent):
 
 InterfaceConfigs FileWorker::readInterfaceConfigs(QString pathToConfigs) {
 	InterfaceConfigs interfaceConfigs;
-	interfaceConfigs.windowSize.setWidth(800);
-	interfaceConfigs.windowSize.setHeight(400);
 	QFile file(pathToConfigs);
 	if(file.open(QFile::ReadOnly | QFile::Text)) {
 		QDomDocument domDoc;
@@ -133,7 +131,7 @@ QObject* FileWorker::createControl(const QDomElement& element, ControlTypeBase& 
 void FileWorker::setUnionParamForBaseGraphControl(const QDomElement& element, const ModelConfigs& modelConfigs, ControlBaseGraphObject* graphicsObject) {
 	Q_UNUSED(modelConfigs)
 	graphicsObject->setObjectName(element.attribute(globalVar.strings.value("controlName")));
-	QPointF gaines = graphicsObject->calculateGaines(globalVar.mainWindowSize.width(), globalVar.mainWindowSize.height());
+	QPointF gaines = graphicsObject->calculateGaines(globalVar.graphicsViewSize.width(), globalVar.graphicsViewSize.height());
 	qreal controlPosX = element.attribute(globalVar.strings.value("controlPosX")).toDouble() * gaines.x();
 	qreal controlPosY = element.attribute(globalVar.strings.value("controlPosY")).toDouble() + 54/gaines.y();
 	if(controlPosY > 0) {

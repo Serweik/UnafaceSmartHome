@@ -44,7 +44,7 @@ void ControlBaseGraphObject::setPosAtView(uint windowWidth, uint windowHeight) {
 }
 
 QPointF ControlBaseGraphObject::calculateGaines(uint windowWidth, uint windowHeight) {
-	return QPointF((qreal)windowWidth / 100, ((qreal)windowHeight - 100) / 101);
+	return QPointF((qreal)windowWidth / 100, (qreal)windowHeight / 112);
 }
 
 QRectF ControlBaseGraphObject::boundingRect() const {
@@ -64,7 +64,7 @@ void ControlBaseGraphObject::mousePressEvent(QGraphicsSceneMouseEvent* event) {
 
 void ControlBaseGraphObject::mouseReleaseEvent(QGraphicsSceneMouseEvent* event) {
 	if(event->button() == Qt::LeftButton) {
-		setRealPos((uint)globalVar.mainWindowSize.width(), (uint)globalVar.mainWindowSize.height());
+		setRealPos((uint)globalVar.graphicsViewSize.width(), (uint)globalVar.graphicsViewSize.height());
 	}
 	QGraphicsObject::mouseReleaseEvent(event);
 }

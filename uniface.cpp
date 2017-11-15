@@ -29,7 +29,8 @@ void UniFace::setNewModel(QList<QGraphicsScene*> model, ModelConfigs modelConfig
 }
 
 void UniFace::resize() {
-	QPointF gaines = ControlBaseGraphObject::calculateGaines(globalVar.mainWindowSize.width(), globalVar.mainWindowSize.height());
+	globalVar.graphicsViewSize = graphicsView->size();
+	QPointF gaines = ControlBaseGraphObject::calculateGaines(globalVar.graphicsViewSize.width(), globalVar.graphicsViewSize.height());
 	foreach(QGraphicsItem* item, graphicsView->items()) {
 		ControlBaseGraphObject* graphObj = dynamic_cast<ControlBaseGraphObject*>(item);
 		if(graphObj) {
@@ -38,8 +39,24 @@ void UniFace::resize() {
 	}
 }
 
+QString UniFace::getInterfaceDirName() const {
+	return interfaceDirName;
+}
+
+void UniFace::setInterfaceDirName(const QString& value) {
+	interfaceDirName = value;
+}
+
+QString UniFace::getCurrentPath() const {
+	return currentPath;
+}
+
+void UniFace::setCurrentPath(const QString& value) {
+	currentPath = value;
+}
+
 void UniFace::changeScene(QGraphicsScene* scene) {
-	QPointF gaines = ControlBaseGraphObject::calculateGaines(globalVar.mainWindowSize.width(), globalVar.mainWindowSize.height());
+	QPointF gaines = ControlBaseGraphObject::calculateGaines(globalVar.graphicsViewSize.width(), globalVar.graphicsViewSize.height());
 	foreach (QGraphicsScene* sceneInModel, interfacesModel) {
 		if(sceneInModel == scene) {
 			if(scene != graphicsView->scene()) {

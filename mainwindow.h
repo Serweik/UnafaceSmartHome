@@ -16,10 +16,16 @@ class MainWindow: public QMainWindow {
 		explicit MainWindow(QWidget* parent = 0);
 		~MainWindow();
 
+		void createModels();
+
 	private:
 		Ui::MainWindow* ui;
 		QList<UniFace*> uniFaces;
 		FileWorker* fileWorker = nullptr;
+
+	private slots:
+		void tabChanged(int index);
+		void tabClosed(int index);
 
 	protected:
 		virtual void resizeEvent(QResizeEvent* event);
