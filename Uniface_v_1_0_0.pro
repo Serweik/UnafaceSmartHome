@@ -13,24 +13,25 @@ TARGET = Uniface_v_1_0_0
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp \
-    fileworker.cpp \
-    globalvariables.cpp \
-    bytebutton.cpp \
-    controlbasegraphobject.cpp \
-    levelcontrol.cpp \
-    uniface.cpp
+SOURCES += src/main.cpp\
+    src/mainwindow.cpp \
+    src/fileworker.cpp \
+    src/globalvariables.cpp \
+    src/bytebutton.cpp \
+    src/controlbasegraphobject.cpp \
+    src/levelcontrol.cpp \
+    src/uniface.cpp
 
-HEADERS  += mainwindow.h \
-    universalfactory.h \
-    fileworker.h \
-    globalvariables.h \
-    globalvarfromresourcesloader.h \
-    bytebutton.h \
-    controlbasegraphobject.h \
-    levelcontrol.h \
-    uniface.h
+HEADERS  += src/mainwindow.h \
+    src/universalfactory.h \
+    src/fileworker.h \
+    src/globalvariables.h \
+    src/globalvarfromresourcesloader.h \
+    src/bytebutton.h \
+    src/controlbasegraphobject.h \
+    src/levelcontrol.h \
+    src/uniface.h\
+    src/swenum.h
 
 FORMS    += mainwindow.ui
 

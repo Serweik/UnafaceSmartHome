@@ -5,8 +5,8 @@
 #include <QGraphicsView>
 #include <QPointer>
 
-#include <fileworker.h>
-#include <globalvarfromresourcesloader.h>
+#include "fileworker.h"
+#include "globalvarfromresourcesloader.h"
 
 class UniFace: public QObject {
 	Q_OBJECT

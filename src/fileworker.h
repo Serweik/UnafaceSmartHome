@@ -11,6 +11,7 @@
 
 #include <QGraphicsScene>
 
+#include "swenum.h"
 #include "universalfactory.h"
 #include "globalvariables.h"
 
@@ -18,46 +19,11 @@ struct ModelConfigs {
 	size_t* targetObjectPtr = nullptr;	// чтобы конкретезировать для какого объекта собирается модель, т.к. на 1 сигнал может подписаться несколько объектов
 };
 
-
-template <typename ENUM>
-class MetaEnum {
-	public:
-		ENUM enumValue;
-		MetaEnum() {
-
-		}
-
-	private:
-		template <typename ENUM_VALUE, typename ENUM_VALUE>
-		void createStringRepresent() {
-
-		}
-};
-
-class LoadingEnum {
-	public:
-		enum LoadingMode {
-			TAB_MODE,
-			ONE_EXEMPLAR_MODE,
-			LAST_ELEMENT
-		}loadingMode;
-
-		LoadingEnum() {
-			stringValues.insert(TAB_MODE, NAME_TO_STRING(TAB_MODE));
-			stringValues.insert(TAB_MODE, NAME_TO_STRING(ONE_EXEMPLAR_MODE));
-		}
-		QString stringValue() const {
-			return stringValues.value(loadingMode, NAME_TO_STRING(TAB_MODE));
-		}
-
-	private:
-		QMap<LoadingMode, QString> stringValues;
-};
-
-enum class LoadingMode {
+SW_ENUM (
+	LoadingMode, unsigned char, unsigned char,
 	TAB_MODE,
 	ONE_EXEMPLAR_MODE
-};
+)
 
 struct InterfaceConfigs {
 	QSize windowSize = {800, 480};
